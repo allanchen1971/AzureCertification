@@ -43,48 +43,37 @@ You should have the following items ready before beginning the process:
 <a name="preparethedevice"></a>
 # Step 2: Prepare your Device
 
--   Connect the power adapter, USB Keyborad/Mouse with Embux EAS-50.
+-   Connect the power adapter, USB Keyborad/Mouse with [Nexaiot Nise50].
 -   Wait until the operating system is ready.
 
+<a name="GetDPSInformation"></a>
+# Step 3: Prepare your DPS
+
+-   Connect to the Azure portal and Create [Azure IOT Hub Device Provisioning Services](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision)
+-   Please keep the DPS (ID Scope/Global device endpoint/Key/Subscription ID).
+
 <a name="Build"></a>
-# Step 3: Build and Run the sample
+# Step 4: Build and Run the sample
 
--   Download the [Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-csharp) and the sample programs and save them to your local repository.
+-   Download the [Xcare SDK](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_Nise50) and the sample programs and save them to your local repository.
 -   Start a new instance of Visual Studio 2019.
--   Open the **iothub\_csharp\_client.sln** solution in the `device` folder in your local copy of the repository.
--   In Visual Studio, from Solution Explorer, navigate to the **samples** folder.
--   In the **DeviceClientAmqpSample** project, open the ***Program.cs*** file.
--   Locate the following code in the file:
-
-        private const string DeviceConnectionString = "<replace>";
-        
--   Replace `<replace>` with the connection string for your device.
--   In **Solution Explorer**, right-click the **DeviceClientAmqpSample** project, click **Debug**, and then click **Start new instance** to build and run the sample. The console displays messages as the application sends device-to-cloud messages to IoT Hub.
--   Use the **DeviceExplorer** utility to observe the messages IoT Hub receives from the **Device Client AMQP Sample** application.
--   Refer "Monitor device-to-cloud events" in [DeviceExplorer Usage document](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md) to see the data your device is sending.
--   Refer "Send cloud-to-device messages" in [DeviceExplorer Usage document](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md) for instructions on sending messages to device.
-
-**Development Environmental setup**
-
-IoT Plug and Play Certification is certifying specific device code implementation against specific device model. Device builders should either pre-install device code or make the binary download-able.{Please include the below pointers specific to device in this section and add screen shots where ever necessary}
-
-1.	Describing the capabilities of the device 
-2.	How to setup the device and connect power
-3.	How to take the DPS configuration and program the device (Note : DPS ID scope should be configured w/o recompiling the embedded code)
-4.	How to configure device over Wifi, cellular, screens, etc.
-5.	Add the links of external software/tools as required 
-6.	Add steps on how to run the device code/how and where to download binary and then run on device. If you have multiple options on how to deploy device code please mention only one option here and other options in Additional links section
+-   Open the **xcarePNP.csproj** solution in your local copy of the repository.
+-   In **Solution Explorer**, right-click and choose **Build** for build this project.
+-   right-click the **XcarePNP** project, click **Debug**, and then add run parameter : "-s dps -i {DPS ID Scope} -d {Subscription ID} -k {DeviceKey} -e {Global device endpoint}"
+-   click **Start new instance** to build and run the sample. The console displays messages as the application sends device-to-cloud messages to IoT Hub.
 
 <a name="IntegrationwithAzureIoTExplorer"></a>
 # Integration with Azure IoT Explorer
 
--   Include the steps on how to connect the IoT Plug and Play Device to Azure IoT Explorer
--   Include screenshots and comments on how IoT Explorer shows/visualize telemetry , commands and properties coming from your IoT Plug and Play device.
--   Include the steps on how to interact with devices (telemetry, commands properties)
--   Ensure to attach the screenshot on consuming the device models available in public repository (not local folder) when using Azure IoT Explorer
-
-# Additional information
-Put any additional information here such as alternative paths to deploy device application etc.
+-   Use the **DeviceExplorer** utility and Click **IoT Plug and Play components**
+-   On the **Model ID** field to fill **dtmi:Nexcom:Nise50:Xcare;1**
+-   You can add **Public Repositiory** or Choose **Local Folder** (Path on Models in your local copy of the repository.
+-   to observe the messages IoT Hub receives from the application.
+-   Refer "IOT Plug and Play components" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP1.jpg)
+-   Refer "IOT Plug and Play components Interface" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP2.jpg)to see the your device Interface.
+-   Refer "IOT Plug and Play components Properiteies" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP3.jpg)to see the your device Properitieies.
+-   Refer "IOT Plug and Play components Properiteies (writable)" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP4.jpg)to see the your device Properitieies(writable).
+-   Refer "IOT Plug and Play components Command" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP5.jpg)to sent your reboot command.
 
 <a name="AdditionalLinks"></a>
 # Additional Links
@@ -95,4 +84,4 @@ Please refer to the below link for additional information for Plug and Play
 -   [Import the Plug and Play model](https://docs.microsoft.com/en-us/azure/iot-pnp/concepts-model-repository)
 -   [Configure to connect to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-pnp/quickstart-connect-device-c)
 -   [How to use IoT Explorer to interact with the device ](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer#install-azure-iot-explorer)   
-[Nexaiot Nise50]: https://www.nexcom.com.tw/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-nise-50-iot-gateway
+-   [Nexaiot Nise50](https://www.nexcom.com.tw/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-nise-50-iot-gateway)
