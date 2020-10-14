@@ -47,10 +47,11 @@ You should have the following items ready before beginning the process:
 -   Wait until the operating system is ready.
 
 <a name="GetDPSInformation"></a>
-# Step 3: Prepare your DPS
+# Step 3: Prepare your DPS and iot hub
 
--   Connect to the Azure portal and Create [Azure IOT Hub Device Provisioning Services](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision)
--   Please keep the DPS (ID Scope/Global device endpoint/Key/Subscription ID).
+-   Connect to the Azure portal and Create [Azure IOT Hub Device Provisioning Services](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision) and [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub)
+-   Please keep the DPS information (ID Scope/Global device endpoint/Device Key).
+-   Please Create a device under [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub) and keep the device ID.
 
 <a name="Build"></a>
 # Step 4: Build and Run the sample
@@ -59,27 +60,28 @@ You should have the following items ready before beginning the process:
 -   Start a new instance of Visual Studio 2019.
 -   Open the **xcarePNP.csproj** solution in your local copy of the repository.
 -   In **Solution Explorer**, right-click and choose **Build** for build this project.
--   right-click the **XcarePNP** project, click **Debug**, and then add run parameter : "-s dps -i {DPS ID Scope} -d {Subscription ID} -k {DeviceKey} -e {Global device endpoint}"
+-   right-click the **XcarePNP** project, click **Debug**, and then add run parameter : "-s dps -i {DPS ID Scope} -d {Device ID} -k {DeviceKey} -e {Global device endpoint}"
 -   click **Start new instance** to build and run the sample. The console displays messages as the application sends device-to-cloud messages to IoT Hub.
 
 <a name="IntegrationwithAzureIoTExplorer"></a>
 # Integration with Azure IoT Explorer
 
 -   Use the **DeviceExplorer** utility and Click **IoT Plug and Play components**
--   On the **Model ID** field to fill **dtmi:Nexcom:Nise50:Xcare;1**
--   You can add **Public Repositiory** or Choose **Local Folder** (Path on Models in your local copy of the repository.
--   to observe the messages IoT Hub receives from the application.
+-   (Step1) On the **Model ID** field to fill **dtmi:Nexcom:Nise50:Xcare;1**
+-   (Step2) You can add **Public Repositiory** or Choose **Local Folder** (Path on Models in your local copy of the repository.
+-   (Step3) Click **Components"->**Default component**
 -   Refer "IOT Plug and Play components" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP1.jpg)
+-   You can see the device **Information\Properties(read-only)\Properties(writable)\Commands\Telemetry**
 -   Refer "IOT Plug and Play components Interface" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP2.jpg)to see the your device Interface.
 -   Refer "IOT Plug and Play components Properiteies" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP3.jpg)to see the your device Properitieies.
 -   Refer "IOT Plug and Play components Properiteies (writable)" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP4.jpg)to see the your device Properitieies(writable).
 -   Refer "IOT Plug and Play components Command" (https://github.com/allanchen1971/AzureCertification/blob/master/PNP_Xcare_Nise50/Picture/PNP5.jpg)to sent your reboot command.
+-   Under **Telemetry** property and press **Start** to observe the messages IoT Hub receives from the application.
 
 <a name="AdditionalLinks"></a>
 # Additional Links
 
 Please refer to the below link for additional information for Plug and Play 
-
 -   [Manage cloud device messaging with Azure-IoT-Explorer](https://github.com/Azure/azure-iot-explorer/releases)
 -   [Import the Plug and Play model](https://docs.microsoft.com/en-us/azure/iot-pnp/concepts-model-repository)
 -   [Configure to connect to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-pnp/quickstart-connect-device-c)
