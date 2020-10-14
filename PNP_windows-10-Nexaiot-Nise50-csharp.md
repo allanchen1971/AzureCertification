@@ -22,13 +22,13 @@ Connect Nise50 device to your Azure IoT services
 
 **About this document**
 
-This document describes how to connect [Nexaiot Nise50] to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
+This document describes how to connect [Nexaiot Nise50](https://www.nexcom.com.tw/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-nise-50-iot-gateway) to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
 
 IoT Plug and Play certified device simplifies the process of building devices without custom device code. Using Solution builders can integrated quickly using the certified IoT Plug and Play enabled device based on Azure IoT Central as well as third-party solutions.
 
 This getting started guide provides step by step instruction on getting the device provisioned to Azure IoT Hub using Device Provisioning Service (DPS) and using Azure IoT Explorer to interact with device's capabilities.
 
-[Nexaiot Nise50] is powered by the latest generation of Intel® Atom™ processor E3826 (formerly codenamed "Bay Trail-I"), NISE 50 series positions at the intelligent IoT gateway for factory automation and for smart city applications. Up to 4G on-board DDR3L memory, the NISE 50 series support operating temperature from -5 up to 55 degree C with 24V DC input with +/-20% range. The NISE 50 series have strong connectivity - Ethernet-based LAN port and traditional RS485, mainly for Modbus TCP or Modbus RTU communication. For wireless connectivity, there are 3x mini-PCIe sockets which can support optional wireless modules for IoT applications, for example, Wi-Fi, Bluetooth, 3.5G and 4G LTE module. NISE 50 is definitely the best choice for M2M intelligent system as an intelligent IoT gateway.
+[Nexaiot Nise50](https://www.nexcom.com.tw/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-nise-50-iot-gateway) is powered by the latest generation of Intel® Atom™ processor E3826 (formerly codenamed "Bay Trail-I"), NISE 50 series positions at the intelligent IoT gateway for factory automation and for smart city applications. Up to 4G on-board DDR3L memory, the NISE 50 series support operating temperature from -5 up to 55 degree C with 24V DC input with +/-20% range. The NISE 50 series have strong connectivity - Ethernet-based LAN port and traditional RS485, mainly for Modbus TCP or Modbus RTU communication. For wireless connectivity, there are 3x mini-PCIe sockets which can support optional wireless modules for IoT applications, for example, Wi-Fi, Bluetooth, 3.5G and 4G LTE module. NISE 50 is definitely the best choice for M2M intelligent system as an intelligent IoT gateway.
 
 <a name="Prerequisites"></a>
 # Step 1: Prerequisites
@@ -43,7 +43,7 @@ You should have the following items ready before beginning the process:
 <a name="preparethedevice"></a>
 # Step 2: Prepare your Device
 
--   Connect the power adapter, USB Keyborad/Mouse with [Nexaiot Nise50].
+-   Connect the power adapter, USB Keyborad/Mouse with [Nexaiot Nise50](https://www.nexcom.com.tw/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-nise-50-iot-gateway).
 -   Wait until the operating system is ready.
 
 <a name="GetDPSInformation"></a>
