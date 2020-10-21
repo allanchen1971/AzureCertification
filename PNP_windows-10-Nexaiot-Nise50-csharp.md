@@ -12,7 +12,9 @@ Connect Nise50 device to your Azure IoT services
 
 -   [Introduction](#Introduction)
 -   [Prerequisites](#Prerequisites)
--   [Prepare the Device](#preparethedevice)
+-   [Prepare your Device](#preparethedevice)
+-   [Prepare your DPS and iot hub](#GetDPSInformation)
+-   [Build and Run the sample](#BuildRunSample)
 -   [Integration with Azure IoT Explorer](#IntegrationwithAzureIoTExplorer)
 -   [Additional Links](#AdditionalLinks)
 
@@ -53,7 +55,7 @@ You should have the following items ready before beginning the process:
 -   Please keep the DPS information (ID Scope/Global device endpoint/Device Key).
 -   Please Create a device under [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub) and keep the device ID.
 
-<a name="Build"></a>
+<a name="BuildRunSample"></a>
 # Step 4: Build and Run the sample
 
 -   Download the [Xcare SDK](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_Nise50) and the sample programs and save them to your local repository.

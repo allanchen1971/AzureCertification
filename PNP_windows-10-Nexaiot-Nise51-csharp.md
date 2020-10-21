@@ -12,7 +12,9 @@ Connect Nise51 device to your Azure IoT services
 
 -   [Introduction](#Introduction)
 -   [Prerequisites](#Prerequisites)
--   [Prepare the Device](#preparethedevice)
+-   [Prepare your Device](#preparethedevice)
+-   [Prepare your DPS and iot hub](#GetDPSInformation)
+-   [Build and Run the sample](#BuildRunSample)
 -   [Integration with Azure IoT Explorer](#IntegrationwithAzureIoTExplorer)
 -   [Additional Links](#AdditionalLinks)
 
