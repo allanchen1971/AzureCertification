@@ -1,7 +1,7 @@
 {
-  "@id": "dtmi:nexcom:APPC3154;1",
+  "@id": "dtmi:nexcom:NIFE105W;1",
   "@type": "Interface",
-  "displayName": "APPC3154",
+  "displayName": "NIFE105W",
   "@context": "dtmi:dtdl:context;2",
   "contents": [
     {

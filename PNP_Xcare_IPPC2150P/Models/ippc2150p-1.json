@@ -1,7 +1,7 @@
 {
-  "@id": "dtmi:nexcom:APPC3154;1",
+  "@id": "dtmi:nexcom:IPPC2150P;1",
   "@type": "Interface",
-  "displayName": "APPC3154",
+  "displayName": "IPPC2150P",
   "@context": "dtmi:dtdl:context;2",
   "contents": [
     {

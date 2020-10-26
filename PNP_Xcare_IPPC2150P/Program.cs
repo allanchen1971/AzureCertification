@@ -16,7 +16,7 @@ namespace Thermostat
     public class Program
     {
         // DTDL interface used: https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json
-        private const string ModelId = "dtmi:Nexcom:APPC3154;1";
+        private const string ModelId = "dtmi:nexcom:IPPC2150P;1";
 
         private static ILogger s_logger;
 

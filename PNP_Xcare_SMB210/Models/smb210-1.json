@@ -1,7 +1,7 @@
 {
-  "@id": "dtmi:nexcom:APPC3154;1",
+  "@id": "dtmi:nexcom:SMB210;1",
   "@type": "Interface",
-  "displayName": "APPC3154",
+  "displayName": "SMB210",
   "@context": "dtmi:dtdl:context;2",
   "contents": [
     {

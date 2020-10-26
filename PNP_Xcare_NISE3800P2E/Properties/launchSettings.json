@@ -2,7 +2,7 @@
   "profiles": {
     "Thermostat": {
       "commandName": "Project",
-      "commandLineArgs": "-s connectionString -p HostName=AzureCertificationFree.azure-devices.net;DeviceId=TEST01;SharedAccessKey=2kpJx++KSqpEC9KyAgSQBYL+ERWpDe8R9BYbAakkJ8U="
+      "commandLineArgs": "-s dps -i 0ne000FFA42 -d b4ef07c6-00b5-439a-8aa0-3fe3463ec085 -k NUr4LMBUveiBotC71Ilr+I1iNBqWeCe0zwPgR7g9NAg= -e global.azure-devices-provisioning.net"
     }
   }
 }
