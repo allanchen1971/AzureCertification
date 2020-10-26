@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Thermostat": {
+      "commandName": "Project",
+      "commandLineArgs": "-s connectionString -p HostName=AzureCertificationFree.azure-devices.net;DeviceId=TEST01;SharedAccessKey=2kpJx++KSqpEC9KyAgSQBYL+ERWpDe8R9BYbAakkJ8U="
+    }
+  }
+}
