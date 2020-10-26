@@ -69,7 +69,7 @@ You should have the following items ready before beginning the process:
 # Integration with Azure IoT Explorer
 
 -   Use the **DeviceExplorer** utility and Click **IoT Plug and Play components**
--   (Step1) On the **Model ID** field to fill **dtmi:Nexcom:Nise50:Xcare;1**
+-   (Step1) On the **Model ID** field to fill **dtmi:nexcom:IPPC2150P;1**
 -   (Step2) You can add **Public Repositiory** or Choose **Local Folder** (Path on Models in your local copy of the repository.
 -   (Step3) Click **Components"->**Default component**
 -   Refer [IOT Plug and Play components]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP1.jpg)
