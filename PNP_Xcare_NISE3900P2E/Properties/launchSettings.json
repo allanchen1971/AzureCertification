@@ -1,8 +1,7 @@
 {
   "profiles": {
     "Thermostat": {
-      "commandName": "Project",
-      "commandLineArgs": "-s dps -i 0ne000FFA42 -d 48efc046-6f44-4a23-9780-c07b7631f42b -k pj2UZvLXNZxbUj1DBQ4GExUZ6Muc8N42Z4d1gFqypfM= -e global.azure-devices-provisioning.net"
+      "commandName": "Project"
     }
   }
 }

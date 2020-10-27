@@ -24,7 +24,7 @@ Connect NIFE200P2E device to your Azure IoT services
 
 **About this document**
 
-This document describes how to connect [Nexaiot NIFE200P2E]( A_03) to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
+This document describes how to connect [Nexaiot NIFE200P2E](https://www.nexaiot.com/cn/product/Industrial%20PC/Front-access%20Industrial%20Book-PC/NIFE200P2E) to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
 
 IoT Plug and Play certified device simplifies the process of building devices without custom device code. Using Solution builders can integrated quickly using the certified IoT Plug and Play enabled device based on Azure IoT Central as well as third-party solutions.
 
@@ -74,10 +74,10 @@ You should have the following items ready before beginning the process:
 -   (Step3) Click **Components"->**Default component**
 -   Refer [IOT Plug and Play components]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP1.jpg)
 -   You can see the device **Information\Properties(read-only)\Properties(writable)\Commands\Telemetry**
--   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP2.jpg)to see the your device Interface.
--   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP3.jpg)to see the your device Properitieies.
--   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP4.jpg)to see the your device Properitieies(writable).
--   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/pnp5.jpg)to sent your reboot command.
+-   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP2.jpg) to see the your device Interface.
+-   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP3.jpg) to see the your device Properitieies.
+-   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/PNP4.jpg) to see the your device Properitieies(writable).
+-   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NIFE200P2E/Picture/pnp5.jpg) to sent your reboot command.
 -   Under **Telemetry** property and press **Start** to observe the messages IoT Hub receives from the application.
 
 

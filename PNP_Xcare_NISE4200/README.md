@@ -74,10 +74,10 @@ You should have the following items ready before beginning the process:
 -   (Step3) Click **Components"->**Default component**
 -   Refer [IOT Plug and Play components]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP1.jpg)
 -   You can see the device **Information\Properties(read-only)\Properties(writable)\Commands\Telemetry**
--   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP2.jpg)to see the your device Interface.
--   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP3.jpg)to see the your device Properitieies.
--   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP4.jpg)to see the your device Properitieies(writable).
--   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/pnp5.jpg)to sent your reboot command.
+-   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP2.jpg) to see the your device Interface.
+-   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP3.jpg) to see the your device Properitieies.
+-   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/PNP4.jpg) to see the your device Properitieies(writable).
+-   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE4200/Picture/pnp5.jpg) to sent your reboot command.
 -   Under **Telemetry** property and press **Start** to observe the messages IoT Hub receives from the application.
 
 

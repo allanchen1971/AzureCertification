@@ -31,6 +31,7 @@ IoT Plug and Play certified device simplifies the process of building devices wi
 This getting started guide provides step by step instruction on getting the device provisioned to Azure IoT Hub using Device Provisioning Service (DPS) and using Azure IoT Explorer to interact with device's capabilities.
 
 [Nexaiot IPPC2150P]( https://nexaiot.com/en/product/Industrial%20PC/Industrial%20Panel%20PC%20-%20ATOM/IPPC2150P) is 	
+The 21” 16:9 XGA fanless Control Panel Computer IPPC 2170P comes with industrial motherboard, flush panel design and can have IP66 front for industrial applications. It supports fieldbus communication in automation market with optional PROFIBUS, PROFINET, DeviceNET, EtherCAT, EtherNet/IP, CANopen fieldbus modules. It also meets PLCopen® specifications and allows easy control programming via SoftPLC and SoftMotion tool kit. It also supports JMobile PC runtime to become HMI.	
 
 <a name="Prerequisites"></a>
 # Step 1: Prerequisites
@@ -74,10 +75,10 @@ You should have the following items ready before beginning the process:
 -   (Step3) Click **Components"->**Default component**
 -   Refer [IOT Plug and Play components]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP1.jpg)
 -   You can see the device **Information\Properties(read-only)\Properties(writable)\Commands\Telemetry**
--   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP2.jpg)to see the your device Interface.
--   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP3.jpg)to see the your device Properitieies.
--   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP4.jpg)to see the your device Properitieies(writable).
--   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/pnp5.jpg)to sent your reboot command.
+-   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP2.jpg) to see the your device Interface.
+-   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP3.jpg) to see the your device Properitieies.
+-   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/PNP4.jpg) to see the your device Properitieies(writable).
+-   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_IPPC2150P/Picture/pnp5.jpg) to sent your reboot command.
 -   Under **Telemetry** property and press **Start** to observe the messages IoT Hub receives from the application.
 
 

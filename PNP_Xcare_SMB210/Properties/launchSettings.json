@@ -2,7 +2,7 @@
   "profiles": {
     "Thermostat": {
       "commandName": "Project",
-      "commandLineArgs": "-s dps -i 0ne000FFA42 -d 9e22a3b2-96c2-4907-86e1-7b503f49514a -k MnZBGBxQ8WNlnl9pFSIw8baEm7+BEMK+/FrwJYyjlvs= -e global.azure-devices-provisioning.net"
+      "commandLineArgs": "-s connectionString -p HostName=NexcomTest.azure-devices.net;DeviceId=PNPTest_SMB210;SharedAccessKey=lhnDAfIfJlUiHaLJRbNb75gwlTFut513FuJLStMCrfU="
     }
   }
 }
