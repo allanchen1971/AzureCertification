@@ -175,7 +175,7 @@ namespace Thermostat
             TwinCollection reportedProperties = new TwinCollection();
             TwinCollection component = new TwinCollection();
             component["__t"] = "c";
-            component[propertyName_modelname] = "APPC3154";
+            component[propertyName_modelname] = "Neu-X100";
             component[propertyName_GPIO] = _GPIOValue;
             component[propertyName_workingSet] = 0xff;
             reportedProperties["NexDeviceInfo1"] = component;
