@@ -1,7 +1,7 @@
 {
-  "@id": "dtmi:nexcom:APPC3154;1",
+  "@id": "dtmi:nexcom:Nise70;1",
   "@type": "Interface",
-  "displayName": "APPC3154",
+  "displayName": "Nise70",
   "@context": "dtmi:dtdl:context;2",
   "contents": [
     {
