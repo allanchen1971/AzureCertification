@@ -1,6 +1,6 @@
 ---
 platform: {Windows10}
-device: { Nise70}
+device: {Nise70}
 language: {C#}
 ---
 
@@ -12,9 +12,8 @@ Connect Nise70 device to your Azure IoT services
 
 -   [Introduction](#Introduction)
 -   [Prerequisites](#Prerequisites)
--   [Prepare your Device](#preparethedevice)
--   [Prepare your DPS and iot hub](#GetDPSInformation)
--   [Build and Run the sample](#BuildRunSample)
+-   [Prepare the Device](#preparethedevice)
+-   [Connect to Azure IoT Central](#ConnecttoCentral)
 -   [Integration with Azure IoT Explorer](#IntegrationwithAzureIoTExplorer)
 -   [Additional Links](#AdditionalLinks)
 
@@ -24,69 +23,102 @@ Connect Nise70 device to your Azure IoT services
 
 **About this document**
 
-This document describes how to connect [Nexaiot Nise70](https://www.nexaiot.com/tw/product/Industrial%20PC/Slim%20and%20Budget%20Fanless%20PC/NISE70-T03) to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
+This document describes how to connect Nise70 to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
 
 IoT Plug and Play certified device simplifies the process of building devices without custom device code. Using Solution builders can integrated quickly using the certified IoT Plug and Play enabled device based on Azure IoT Central as well as third-party solutions.
 
 This getting started guide provides step by step instruction on getting the device provisioned to Azure IoT Hub using Device Provisioning Service (DPS) and using Azure IoT Explorer to interact with device's capabilities.
 
-[Nexaiot Nise70](https://www.nexaiot.com/tw/product/Industrial%20PC/Slim%20and%20Budget%20Fanless%20PC/NISE70-T03) is THE 15” FANLESS PANEL PC APPC 3154 INCORPORATING AN INDUSTRIAL MOTHERBOARD IS INTENDED FOR VERSATILE INDUSTRIAL APPLICATIONS. THE PANEL PC HAS A TOUCH SCREEN LED BACKLIGHT LCD PANEL WITH 1024 X 768 (XGA) RESOLUTION AND 350-NIT BRIGHTNESS. THE FRONT PANEL 
+
+Nise70 Key Features:
+- Onboard Intel® Celeron® 6305E Tiger Lake-UP3 processor
+- 4 x HDMI, 3 x USB 3.0, 1 x USB 2.0, 3 x LANs, 2 x COMs
+- Onboard TPM 2.0 chip
+- 1 x M.2 Socket for storage/4G LTE/5G
+- 1 x mini-PCIe socket support mSATA/Wi-Fi/BT/4G LTE
+- Support 12 to 24V DC input
+
 
 <a name="Prerequisites"></a>
-# Step 1: Prerequisites
+# Prerequisites
 
 You should have the following items ready before beginning the process:
 
+**For Azure IoT Central**
 -   [Azure Account](https://portal.azure.com)
+-   [Azure IoT Central application](https://apps.azureiotcentral.com/)
+
+
+**For Azure IoT Hub**
 -   [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub)
 -   [Azure IoT Hub Device Provisioning Service](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision)
 -   [Azure IoT Public Model Repository](https://docs.microsoft.com/en-us/azure/iot-pnp/concepts-model-repository)
 
 <a name="preparethedevice"></a>
-# Step 2: Prepare your Device
+# Prepare the Device.
 
--   Connect the power adapter, USB Keyborad/Mouse with [Nexaiot Nise70]( https://www.nexaiot.com/tw/product/Industrial%20PC/Slim%20and%20Budget%20Fanless%20PC/NISE70-T03).
--   Wait until the operating system is ready.
+**Hardware Environmental setup**
+-   Prepare Nise70,and install Win10 IoT Enterprise.
+-   Power on the Nise70.
+-   Connect to the network.
 
-<a name="GetDPSInformation"></a>
-# Step 3: Prepare your DPS and iot hub
+**Software Environmental setup**
+-   Download the source code from this GitHub and check the [“PNP_Xcare_Nise70”](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_Nise70) folder
+-   Install Visual Studio.
+-   Open the project
 
--   Connect to the Azure portal and Create [Azure IOT Hub Device Provisioning Services](https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision) and [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub)
--   Please keep the DPS information (ID Scope/Global device endpoint/Device Key).
--   Please Create a device under [Azure IoT Hub Instance](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub) and keep the device ID.
+**Prepare IoT Hub and DPS configuration**
+Please refer to this tutorial to complete the following procedures :
+1. Use Azure commands or Azure portal to create a Resource Group which include Iot Hub and a Device Provisioning Service
+2. To link the DPS instance to your IoT hub
+3. To create your device by individual device enrollment in your DPS instance.
+4. Make a note of the DPS information (DPS endpoint/Registration ID/ID Scope/Symmetric key).
+ 
+Run the sample
+Under the “PNP_Xcare_Nise70” folder, open the project and set debug parameter: 
+"(-s dps –i {scopeId} –d {deviceID} –k {primarykey} –e {endpoint}"
 
-<a name="BuildRunSample"></a>
-# Step 4: Build and Run the sample
 
--   Download the [Xcare SDK](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70) and the sample programs and save them to your local repository.
--   Start a new instance of Visual Studio 2019.
--   Open the **xcarePNP.csproj** solution in your local copy of the repository.
--   In **Solution Explorer**, right-click and choose **Build** for build this project.
--   right-click the **XcarePNP** project, click **Debug**, and then add run parameter : "-s dps -i {DPS ID Scope} -d {Device ID} -k {DeviceKey} -e {Global device endpoint}"
--   click **Start new instance** to build and run the sample. The console displays messages as the application sends device-to-cloud messages to IoT Hub.
+<a name="ConnecttoCentral"></a>
+# Connect to Azure IoT Central
+1.	Create an application
+Please refer to this [tutorial](https://docs.microsoft.com/en-us/azure/iot-central/core/quick-deploy-iot-central) to create a “Custom application” template.
+2.	Create a device template from the device catalog
+Please refer to this tutorial to create the [Nise70](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-set-up-template#create-a-device-template-from-the-device-catalog) device template.
+3.	Add a device
+Add a new device under Nise70 device template. Make a note of the device ID.
+4.	Get connection information
+-  ID scope : In your IoT Central application, navigate to Administration > Device Connection. Make a note of the ID scope value.
+-  Group primary key : In your IoT Central application, navigate to Administration > Device Connection > SAS-IoT-Devices. Make a note of the shared access signature Primary key value.
+
+![image](https://storageaccountazure9611.blob.core.windows.net/azure-certified/azureCert_Dev_DPS.jpeg)
+![image](https://storageaccountazure9611.blob.core.windows.net/azure-certified/azureCert_Dev_DPS_SAS.jpeg)
+
+Use the Cloud Shell to generate a device specific key from the group SAS key you just retrieved using the Azure CLI
+
+az extension add --name azure-iot
+az iot central device compute-device-key  --device-id sample-device-01 --pk <the group SAS primary key value>
+
+Make a note of the generated device key, and the ID scope for this application and flash it on the device
 
 <a name="IntegrationwithAzureIoTExplorer"></a>
-# Integration with Azure IoT Explorer
+# Integration with Azure IoT Explorer (Advanced)
+This section is optional for Advanced setup
 
--   Use the **DeviceExplorer** utility and Click **IoT Plug and Play components**
--   (Step1) On the **Model ID** field to fill **dtmi:nexcom:Nise70;1**
--   (Step2) You can add **Public Repositiory** or Choose **Local Folder** (Path on Models in your local copy of the repository.
--   (Step3) Click **Components"->**Default component**
--   Refer [IOT Plug and Play components]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70/Picture/PNP1.jpg)
--   You can see the device **Information\Properties(read-only)\Properties(writable)\Commands\Telemetry**
--   Refer [IOT Plug and Play components Interface]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70/Picture/PNP2.jpg) to see the your device Interface.
--   Refer [IOT Plug and Play components Properiteies]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70/Picture/PNP3.jpg) to see the your device Properitieies.
--   Refer [IOT Plug and Play components Properiteies (writable)]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70/Picture/PNP4.jpg) to see the your device Properitieies(writable).
--   Refer [IOT Plug and Play components Command]( https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70/Picture/pnp5.jpg) to sent your reboot command.
--   Under **Telemetry** property and press **Start** to observe the messages IoT Hub receives from the application.
+-   Include the steps on how to connect the IoT Plug and Play Device to Azure IoT Explorer
+-   Include screenshots and comments on how IoT Explorer shows/visualize telemetry , commands and properties coming from your IoT Plug and Play device.
+-   Include the steps on how to interact with devices (telemetry, commands properties)
+-   Ensure to attach the screenshot on consuming the device models available in public repository (not local folder) when using Azure IoT Explorer
 
+# Additional information
+Put any additional information here such as alternative paths to deploy device application etc.
 
 <a name="AdditionalLinks"></a>
 # Additional Links
 
 Please refer to the below link for additional information for Plug and Play 
+
 -   [Manage cloud device messaging with Azure-IoT-Explorer](https://github.com/Azure/azure-iot-explorer/releases)
 -   [Import the Plug and Play model](https://docs.microsoft.com/en-us/azure/iot-pnp/concepts-model-repository)
 -   [Configure to connect to IoT Hub](https://docs.microsoft.com/en-us/azure/iot-pnp/quickstart-connect-device-c)
 -   [How to use IoT Explorer to interact with the device ](https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer#install-azure-iot-explorer)   
--   [Nexaiot Nise70](  https://www.nexaiot.com/tw/product/Industrial%20PC/Slim%20and%20Budget%20Fanless%20PC/NISE70-T03)

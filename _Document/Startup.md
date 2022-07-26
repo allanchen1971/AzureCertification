@@ -1,10 +1,10 @@
 ---
 platform: {Windows10}
-device: {Nise3900E}
+device: {TT300-F30}
 language: {C#}
 ---
 
-Connect Nise3900E device to your Azure IoT services
+Connect TT300-F30 device to your Azure IoT services
 ===
 
 ---
@@ -23,25 +23,25 @@ Connect Nise3900E device to your Azure IoT services
 
 **About this document**
 
-This document describes how to connect Nise3900E to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
+This document describes how to connect TT300-F30 to Azure IoT Hub using the Azure IoT Explorer with certified device application and device models.
 
 IoT Plug and Play certified device simplifies the process of building devices without custom device code. Using Solution builders can integrated quickly using the certified IoT Plug and Play enabled device based on Azure IoT Central as well as third-party solutions.
 
 This getting started guide provides step by step instruction on getting the device provisioned to Azure IoT Hub using Device Provisioning Service (DPS) and using Azure IoT Explorer to interact with device's capabilities.
 
 
-Nise3900E Key Features:
--  Support 8th and 9th generation Intel® Core™ i7/i5/i3 LGA socket type embedded processor
--  Intel® Q370 PCH
--  Support 1 x 2.5" SATA HDD
--  1 x DVI-D, 1 x DP, and 1 x HDMI with independent display support
--  Three Intel® GbE LAN ports; support WoL, teaming and PXE
--  1 x External M.2 socket and 1 x SIM card socket
--  6 x USB 3.0, 4 x USB 2.0, 2 x RS232/422/485 with auto flow control
--  1 x Internal mini-PCIe socket support optional Wi-Fi/3.5G/4G LTE
--  Support +9V to 30VDC input; ATX power mode
--  One PCIe x4 expansion
--  Support -5 to 55 degree Celus extended operating temperature
+TT 300-F30/F31/F32/F33 Key Features:
+-   Support 6, 7, 8, 9th Gen. Intel® Core™ i7/i5/i3 socket type processor Intel® H310C PCH
+-   2 x HDMI (dual display)
+-   4 x USB3.0, 2 x RS232/422/485, 4 x RS232
+-   1 x M.2 2280 Key M (storage)
+-   1 x M.2 3042 Key B (wireless connectivity)
+-   1 x mSATA/miniPCIe (co-lay)
+-   1 x PCIe x16
+-   2 x PCIe x4
+-   1 x SIM card socket
+-   Support +12V/24VDC input; support ATX power mode
+
 
 
 <a name="Prerequisites"></a>
@@ -63,12 +63,12 @@ You should have the following items ready before beginning the process:
 # Prepare the Device.
 
 **Hardware Environmental setup**
--   Prepare Nise3900E,and install Win10 IoT Enterprise.
--   Power on the Nise3900E.
+-   Prepare TT-300,and install Win10 IoT Enterprise.
+-   Power on the TT-300.
 -   Connect to the network.
 
 **Software Environmental setup**
--   Download the source code from this GitHub and check the [“PNP_Xcare_Nise3900E”](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_Nise3900E) folder
+-   Download the source code from this GitHub and check the [“PNP_Xcare_TT300_F30”](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_TT300_F30) folder
 -   Install Visual Studio.
 -   Open the project
 
@@ -80,7 +80,7 @@ Please refer to this tutorial to complete the following procedures :
 4. Make a note of the DPS information (DPS endpoint/Registration ID/ID Scope/Symmetric key).
  
 Run the sample
-Under the “PNP_Xcare_Nise3900E” folder, open the project and set debug parameter: 
+Under the “PNP_Xcare_TT300_F30” folder, open the project and set debug parameter: 
 "(-s dps –i {scopeId} –d {deviceID} –k {primarykey} –e {endpoint}"
 
 
@@ -89,9 +89,9 @@ Under the “PNP_Xcare_Nise3900E” folder, open the project and set debug param
 1.	Create an application
 Please refer to this [tutorial](https://docs.microsoft.com/en-us/azure/iot-central/core/quick-deploy-iot-central) to create a “Custom application” template.
 2.	Create a device template from the device catalog
-Please refer to this tutorial to create the [Nise3900E](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-set-up-template#create-a-device-template-from-the-device-catalog) device template.
+Please refer to this tutorial to create the [TT-300](https://docs.microsoft.com/en-us/azure/iot-central/core/howto-set-up-template#create-a-device-template-from-the-device-catalog) device template.
 3.	Add a device
-Add a new device under Nise3900E device template. Make a note of the device ID.
+Add a new device under TT-300 device template. Make a note of the device ID.
 4.	Get connection information
 -  ID scope : In your IoT Central application, navigate to Administration > Device Connection. Make a note of the ID scope value.
 -  Group primary key : In your IoT Central application, navigate to Administration > Device Connection > SAS-IoT-Devices. Make a note of the shared access signature Primary key value.
