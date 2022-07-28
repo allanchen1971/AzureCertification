@@ -63,7 +63,7 @@ You should have the following items ready before beginning the process:
 -   Connect to the network.
 
 **Software Environmental setup**
--   Download the source code from this GitHub and check the [“PNP_Xcare_Nise70”](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_Nise70) folder
+-   Download the source code from this GitHub and check the [“PNP_Xcare_Nise70”](https://github.com/allanchen1971/AzureCertification/tree/master/PNP_Xcare_NISE70) folder
 -   Install Visual Studio.
 -   Open the project
 
