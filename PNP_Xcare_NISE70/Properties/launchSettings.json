@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Thermostat": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-s connectionString –p HostName=HostName=Bot-IOTHub.azure-devices.net;DeviceId=AzurePNPCertification01;SharedAccessKey=nHVw6EfMfRYs5ZdQ0aont+ON6ghevq9TPbg3bgSJb8U="
     }
   }
 }

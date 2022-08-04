@@ -12,6 +12,8 @@ using Microsoft.Azure.Devices.Shared;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.IO;
 
 namespace Thermostat
 {
@@ -25,9 +27,21 @@ namespace Thermostat
 
     public class ThermostatSample
     {
+        public class xcare_Telemetry
+        {
+            public double cpuTemperature { get; set; }
+            public double sysTemperature { get; set; }
+        }
+        public class xcare_Properties
+        {
+            public string modelname { get; set; }
+            public int GPIO { get; set; }
+            public int workingSet { get; set; }
+        }
+
         private readonly Random _random = new Random();
 
-        private double _temperature = 0d;
+        //private double _temperature = 0d;
         private double CPU_temperature = 0d;
         private double SYS_temperature = 0d;
         private double _maxTemp = 0d;
@@ -69,16 +83,16 @@ namespace Thermostat
                 {
                     if (temperatureReset)
                     {
-                        // Generate a random value between 5.0°C and 45.0°C for the current temperature reading.
-                        _temperature = Math.Round(_random.NextDouble() * 40.0 + 5.0, 1);
-                        CPU_temperature = Math.Round(_random.NextDouble() * 40.0 + 5.0, 1);
-                        SYS_temperature = Math.Round(_random.NextDouble() * 40.0 + 5.0, 1);
-
-                        //temperatureReset = false;
+                        using (StreamReader r = new StreamReader(@"C:\Xcare\xcare_Telemetry.json"))
+                        {
+                            string json = r.ReadToEnd();
+                            var Telemetry = System.Text.Json.JsonSerializer.Deserialize<xcare_Telemetry>(json);
+                            CPU_temperature = Telemetry.cpuTemperature;
+                            SYS_temperature = Telemetry.sysTemperature;
+                        }
                     }
-
                     await SendTemperatureAsync();
-                    await Task.Delay(50 * 1000);
+                    await Task.Delay(10 * 1000);
                 }
             });
         }
@@ -126,12 +140,15 @@ namespace Thermostat
             {
                 int DelayTime = JsonConvert.DeserializeObject<int>(request.DataAsJson);
                 _logger.LogDebug($"Command: Received - Set Reboot Timer Delaytime = {DelayTime}.");
+                
                 var report = new
                 {
                     Status = "Success",
                 };
 
                 byte[] responsePayload = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(report));
+                _logger.LogDebug($"!!System will shutdown after {DelayTime} sec.");
+                //
                 return await Task.FromResult(new MethodResponse(responsePayload, (int)StatusCode.Completed));
             }
             catch (JsonReaderException ex)
@@ -172,14 +189,24 @@ namespace Thermostat
             string propertyName_modelname = "modelname";
             string propertyName_GPIO = "GPIO";
             string propertyName_workingSet = "workingSet";
-            TwinCollection reportedProperties = new TwinCollection();
-            TwinCollection component = new TwinCollection();
-            component["__t"] = "c";
-            component[propertyName_modelname] = "Nise70";
-            component[propertyName_GPIO] = _GPIOValue;
-            component[propertyName_workingSet] = 0xff;
-            reportedProperties["NexDeviceInfo1"] = component;
-            await _deviceClient.UpdateReportedPropertiesAsync(reportedProperties);
+
+            using (StreamReader r = new StreamReader(@"C:\Xcare\xcare_Properties.json"))
+            {
+                string json = r.ReadToEnd();
+                var Properties = System.Text.Json.JsonSerializer.Deserialize<xcare_Properties>(json);
+                Console.WriteLine($"modelname : {Properties.modelname}");
+                Console.WriteLine($"GPIO : {Properties.GPIO}");
+                Console.WriteLine($"workingSet : {Properties.workingSet}");
+
+                TwinCollection reportedProperties = new TwinCollection();
+                TwinCollection component = new TwinCollection();
+                component["__t"] = "c";
+                component[propertyName_modelname] = Properties.modelname;
+                component[propertyName_GPIO] = Properties.GPIO;
+                component[propertyName_workingSet] = Properties.workingSet;
+                reportedProperties["NexDeviceInfo1"] = component;
+                await _deviceClient.UpdateReportedPropertiesAsync(reportedProperties);
+            }
         }
     }
 }
